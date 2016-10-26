@@ -1,4 +1,3 @@
-//: [Previous](@previous)
 
 /*:
  Enumerations (`enum`s) are a very powerful and useful construct in the `Swift` language. They help you to express the _semantics_ of your code very explicitly and let the compiler help you to enforce them.

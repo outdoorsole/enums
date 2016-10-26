@@ -24,7 +24,7 @@
 //  let name: String
 //}
 
-// better model: we have exactly 5 Coursees in the first quarter that are known upfront; now the compiler will only allow valid coursees to be created
+// better model: we have exactly 5 Courses in the first quarter that are known upfront; now the compiler will only allow valid coursees to be created
 enum FirstQuarterTechnicalCourse {
   case python
   case frontend
@@ -85,6 +85,39 @@ let isMobile = isMobileCourse(course: course1)
 print("The course is a mobile course: \(isMobile)")
 
 
+// CHALLENGES
+// Challenge 1: Model a type called Weekday that represents the different days of the week.
+
+enum Weekday {
+    case Monday
+    case Tuesday
+    case Wednesday
+    case Thursday
+    case Friday
+    case Saturday
+    case Sunday
+}
+
+// Challenge 2: Write a function called getWeekdayName that takes a Weekday returns the name of each weekday as a String.
+
+func getWeekdayName(weekday: Weekday) -> String {
+    return "This weekday is called \(weekday)"
+}
+
+getWeekdayName(weekday: .Tuesday)
+
+
+// Challenge 3: Write a function called isItFinallyWeekend that takes a Weekday and returns a String indicating whether the argument is a weekend weekday, eg: "Monday is a regular workday." or "Wuhuuuu, it's SATURDAYYYYYYYY."
+
+func isItFinallyWeekend(weekday: Weekday) -> String {
+    switch weekday {
+    case .Monday, .Tuesday, .Wednesday, .Thursday, .Friday: return "\(weekday) is a regular workday."
+    case .Saturday: return "Wuhuuuu, it's SATURDAYYYYYY."
+    case .Sunday: return "It's a weekend day."
+    }
+}
+
+isItFinallyWeekend(weekday: .Saturday)
 /*:
  ### Challenges
  

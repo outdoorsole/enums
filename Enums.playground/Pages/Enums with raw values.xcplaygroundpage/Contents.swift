@@ -42,7 +42,67 @@ enum Weekday2: Int {
 }
 Weekday2.monday.rawValue
 
+// CHALLENGES
+// 1. Model a type called CardinalDirection using an enum. What could be the different values for this type?
 
+enum CardinalDirection: String {
+    case North = "↑"
+    case South = "↓"
+    case East = "→"
+    case West = "←"
+}
+
+// 2. Write a function called help, that takes a value of type CardinalDirection and returns a String.
+
+func help (direction: CardinalDirection) -> String {
+    var string: String = ""
+    if direction == .North || direction == .East {
+        string = "The ship needs to go \(direction)"
+    } else if direction == .South || direction == .West {
+        string = "This direction \(direction) does not help the ship to get home"
+    }
+    return string
+}
+
+help(direction: .South)
+
+// 3. Model a type called Month using an enum. That type should represent all the different months in one year.
+
+enum Month: Int {
+    case January = 1
+    case February = 2
+    case March = 3
+    case April = 4
+    case May = 5
+    case June = 6
+    case July = 7
+    case August = 8
+    case September = 9
+    case October = 10
+    case November = 11
+    case December = 12
+}
+
+
+// 4. Write a function that returns a String and indicates at which position this month is inside a year, e.g.: March is the 3rd month of the year.
+
+func monthForYear(month: Month) -> String {
+    var number: String = "\(month.rawValue)"
+    switch month {
+        case .January: number += "st"
+        case .February: number += "nd"
+        case .March: number += "rd"
+        default: number += "th"
+    }
+    return "\(month) is the \(number) month of the year"
+}
+
+monthForYear(month: .January)
+monthForYear(month: .February)
+monthForYear(month: .March)
+monthForYear(month: .April)
+monthForYear(month: .May)
+monthForYear(month: .November)
 /*:
  
  ### Challenges
